@@ -93,8 +93,8 @@ jobs:
           cp -aR apps/myaccount/build/* apps/all/build/ 
           cp -aR apps/console/build/* apps/all/build/ 
           echo "/ /myaccount 301" > apps/all/build/_redirects
-          echo "/myaccount/* /myaccount/:splat 308" >> apps/all/build/_redirects
-          echo "/console/* /console/:splat 308" >> apps/all/build/_redirects
+          echo "/myaccount/* /myaccount/:splat 301" >> apps/all/build/_redirects
+          echo "/console/* /console/:splat 200" >> apps/all/build/_redirects
       - name: Publish to Cloudflare Pages - All
         uses: cloudflare/pages-action@v1
         with:
