@@ -93,12 +93,7 @@ jobs:
           cp -aR apps/myaccount/build/* apps/all/build/ 
           cp -aR apps/console/build/* apps/all/build/ 
           echo "/ /myaccount 301" > apps/all/build/_redirects
-          echo "/myaccount/* /myaccount/:splat 200" >> apps/all/build/_redirects
-          echo "/console/* /console/:splat 200" >> apps/all/build/_redirects
-          echo "/console/*" > apps/all/build/_headers
-          echo "  Link: </console>; rel="canonical"" >> apps/all/build/_headers
-          echo "/myaccount/*" > apps/all/build/_headers
-          echo "  Link: </myaccount>; rel="canonical"" >> apps/all/build/_headers
+  
       - name: Publish to Cloudflare Pages - All
         uses: cloudflare/pages-action@v1
         with:
@@ -138,3 +133,9 @@ jobs:
       #     # Optional: Switch what branch you are publishing to.
       #     # By default this will be the branch which triggered this workflow
       #     branch: main
+        # echo "/myaccount/* /myaccount/:splat 200" >> apps/all/build/_redirects
+          # echo "/console/* /console/:splat 200" >> apps/all/build/_redirects
+          # echo "/console/*" > apps/all/build/_headers
+          # echo "  Link: </console>; rel="canonical"" >> apps/all/build/_headers
+          # echo "/myaccount/*" > apps/all/build/_headers
+          # echo "  Link: </myaccount>; rel="canonical"" >> apps/all/build/_headers
