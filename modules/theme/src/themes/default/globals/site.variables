@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2019, WSO2 LLC. (https://www.wso2.com). All Rights Reserved.
+ * Copyright (c) 2019, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  *
- * WSO2 LLC. licenses this file to you under the Apache License,
+ * WSO2 Inc. licenses this file to you under the Apache License,
  * Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,6 +14,7 @@
  * KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations
  * under the License.
+ *
  */
 
 /*-------------------
@@ -50,12 +51,12 @@
     Brand Colors
 --------------------*/
 
-@primaryColor        : @orange;
 @primaryColorGradient: linear-gradient(77.74deg, #EB4F63 11.16%, #FA7B3F 99.55%);
 @negativeColor       : #E53535;
 @primaryGradientColor : linear-gradient(90deg,#FFF2E8 50%,#FEF8ED 100%);
+@primaryColor        : #3865B5;
 @secondaryColor      : #E0E1E2;
-@accentColor1        : #3865B5;
+@accentColor1        : @orange;
 @accentColor2        : #19BECE;
 @accentColor3        : #FFFFFF;
 @accentColor4        : #92278F;
@@ -231,7 +232,7 @@
 @dashboardLayoutSidePanelWidth: 300px;
 @dashboardLayoutMobileContentPadding: 20px 14px;
 
-@fluidDashboardLayoutTopPadding: 25px;
+@fluidDashboardLayoutTopPadding: 3rem;
 @fluidDashboardLayoutHorizontalPadding: 15px;
 @fluidLayoutTopPadding: 25px;
 @fluidLayoutHorizontalPadding: 15px;
@@ -240,4 +241,4 @@
 @fluidDashboardLayoutSidePanelPadding: @fluidDashboardLayoutTopPadding @fluidDashboardLayoutHorizontalPadding;
 @fluidDashboardLayoutDesktopContentPadding: @fluidDashboardLayoutTopPadding 30px;
 
-@pageLayoutContentPadding: @fluidDashboardLayoutTopPadding 30px;
+@pageLayoutContentPadding: @fluidDashboardLayoutTopPadding 1rem;
