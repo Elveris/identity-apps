@@ -406,6 +406,15 @@ export const console: ConsoleNS = {
         }
       }
     },
+    featureGate: {
+      enabledFeatures: {
+          tags: {
+              premium: {
+                  warning: "Bu, premium bir özelliktir ve yakında ücretsiz abonelik planı için devre dışı bırakılacaktır. Bu özelliğe kesintisiz erişim için aboneliğinizi yükseltin."
+              }
+          }
+      }
+    },
     develop: {
       componentExtensions: {
         component: {
@@ -573,6 +582,15 @@ export const console: ConsoleNS = {
               content: "Bu işlem geri alınamaz ve uygulamayı kalıcı olarak siler.",
               header: "Emin misin?",
               message: "Bu uygulamayı silerseniz, bu uygulama için kimlik doğrulama akışları çalışmayı durduracaktır. "
+            },
+            deleteChoreoApplication: {
+              assertionHint: "Lütfen işleminizi onaylayın.",
+              content: "Bu uygulamayı silmek, kimlik doğrulama akışlarını bozacaktır ve ilgili Choreo uygulaması, " +
+                  "kimlik bilgileriyle kullanılamaz hale gelecektir. " +
+                  "<1>Kendi riskinizle devam edin.</1>",
+              header: "Emin misiniz?",
+              message: "Bu uygulamayı silerseniz, bu uygulama için kimlik doğrulama akışları çalışmayı durduracaktır. " +
+                  "Lütfen dikkatli ilerleyin."
             },
             deleteOutboundProvisioningIDP: {
               assertionHint: "Lütfen yazın <1>{{ name }}</1> onaylamak.",
@@ -1070,6 +1088,11 @@ export const console: ConsoleNS = {
                           description: "Kullanıcıların Google ile oturum açmasını sağlayın.",
                           heading: "Google girişi ekle"
                         },
+                        idf: {
+                          tooltipText: "Tanımlayıcı ilk kimlik doğrulayıcı, kullanıcının kimliğini doğrulamaz ve bu nedenle" +
+                              " kullanıcı kimliğini veya özelliklerini seçmek için kullanılamaz. Bunu yapmak için, bir kimlik doğrulama" +
+                              " betiği kullanarak doğrulamaları etkinleştirin."
+                        },
                         magicLink: {
                           description: "Kullanıcıların, e-postalarına gönderilen sihirli bir bağlantıyı kullanarak oturum açmalarını sağlayın.",
                           heading: "Magic Link girişi ekle"
@@ -1094,6 +1117,10 @@ export const console: ConsoleNS = {
                         smsOTP: {
                           description: "SMS tabanlı OTP ile ek kimlik doğrulama katmanını etkinleştirin.",
                           heading: "İkinci bir faktör olarak SMS OTP'yi ekleyin"
+                        },
+                        emailOTPFirstFactor: {
+                          description: "Kullanıcıların e-postalarına gönderilen bir seferlik şifre ile giriş yapmalarını sağlayın.",
+                          heading: "E-posta OTP girişi ekleyin"
                         }
                       }
                     }
@@ -2572,6 +2599,10 @@ export const console: ConsoleNS = {
               description: "Tanımlayıcı İlk doğrulayıcı, tek doğrulayıcı olamaz. ",
               message: "Güncelleme hatası"
             },
+            updateIdentifierFirstInFirstStepError: {
+              description: "Identifier First doğrulayıcısı, oturum açma akışında birden fazla kimlik doğrulama adımı gerektirir.",
+              message: "Güncelleme hatası"
+            },
             updateOutboundProvisioning: {
               genericError: {
                 description: "Giden sağlama IDP'si zaten var.",
@@ -2767,7 +2798,15 @@ export const console: ConsoleNS = {
               content: "Silmeden önce bu uygulamalardan ilişkilendirmeleri kaldırın:",
               header: "Silinemiyor",
               message: "Bu bağlantıyı kullanan uygulamalar var."
-            }
+            },
+            deleteCertificate: {
+              assertionHint: "Lütfen işleminizi onaylayın.",
+              content: "Bu, bu güvendiğiniz token sağlayıcı için mevcut olan tek sertifikadır. " +
+                  "Eğer bu sertifika silinirse, {{productName}} bu sağlayıcıdan gelen tokenleri doğrulayamayacaktır. " +
+                  "<1>Dikkatli ilerleyin.</1>",
+              header: "Emin misiniz?",
+              message: "Bu işlem geri alınamaz ve sertifikayı kalıcı olarak silecektir."
+          }
           },
           dangerZoneGroup: {
             deleteIDP: {
@@ -3400,7 +3439,17 @@ export const console: ConsoleNS = {
                   empty: "Kimlik Sağlayıcı adı gerekli",
                   maxLengthReached: "Kimlik sağlayıcı adı şu değeri aşamaz: {{ maxLength }} karakterler.",
                   required: "Kimlik Sağlayıcı adı gerekli"
-                }
+                },
+              },
+              issuer: {
+                hint: "Güvendiğiniz token sağlayıcısının benzersiz sağlayıcı değeri.",
+                label: "Sağlayıcı",
+                placeholder: "Sağlayıcıyı girin."
+              },
+              alias: {
+                hint: "{{productName}} için güvendiğiniz token sağlayıcısında takma ad değeri.",
+                label: "Takma Ad",
+                placeholder: "Takma adı girin."
               }
             },
             jitProvisioning: {
@@ -3477,7 +3526,15 @@ export const console: ConsoleNS = {
                 validation: {
                   empty: "Lütfen konu için bir özellik seçin"
                 }
-              }
+              },
+            },
+            certificateSection: {
+              certificateEditSwitch: {
+                  jwks: "JWKS Uç Noktasını Kullan",
+                  pem: "Sertifikaları Sağla"
+              },
+              noCertificateAlert: "Bu güvendiğiniz token sağlayıcı için herhangi bir sertifika mevcut değil. " +
+                  "Bu nedenle {{productName}} bu sağlayıcıdan gelen tokenleri doğrulayamayacaktır."
             }
           },
           helpPanel: {
@@ -3622,6 +3679,12 @@ export const console: ConsoleNS = {
                 message: "Silme başarılı"
               }
             },
+            deleteIDPWithConnectedApps: {
+              "error": {
+                  "description": "Bu bağlantıyı kullanan uygulamalar var.",
+                  "message": "Silinemez"
+              }
+            },
             disableAuthenticator: {
               error: {
                 description: "Varsayılan kimlik doğrulayıcıyı devre dışı bırakamazsınız.",
@@ -3634,6 +3697,12 @@ export const console: ConsoleNS = {
               success: {
                 description: "",
                 message: ""
+              }
+            },
+            disableIDPWithConnectedApps: {
+              "error": {
+                  "description": "Bu bağlantıyı kullanan uygulamalar var.",
+                  "message": "Devre Dışı Bırakılamaz"
               }
             },
             disableOutboundProvisioningConnector: {
@@ -4160,8 +4229,60 @@ export const console: ConsoleNS = {
               validation: {
                 invalidName: "{{idpName}} geçerli bir isim değil. ",
                 name: "Kimlik doğrulama sağlayıcı adı geçerli değil"
-              }
+              },
             },
+            trustedTokenIssuer: {
+              addWizard: {
+                  title: "Güvenilir token sağlayıcı",
+                  subtitle: "Bir güvenilir token sağlayıcısını kaydedin ve bu tokenı başka bir tarafından verilen token ile değiştirin"
+              },
+              forms: {
+                  steps: {
+                      general: "Genel Ayarlar",
+                      certificate: "Sertifikalar"
+                  },
+                  name: {
+                      label: "Güvenilir token sağlayıcı adı",
+                      placeholder: "Güvenilir token sağlayıcı için bir ad girin"
+                  },
+                  issuer: {
+                      label: "Sağlayıcı",
+                      placeholder: "Sağlayıcıyı girin",
+                      hint: "Güvenilir token sağlayıcısının benzersiz sağlayıcı değeri.",
+                      validation: {
+                          notValid: "{{issuer}} geçerli bir sağlayıcı değil."
+                      }
+                  },
+                  alias: {
+                      label: "Takma Ad",
+                      placeholder: "Takma adı girin",
+                      hint: "{{productName}} için güvenilir token sağlayıcısında takma ad değeri.",
+                      validation: {
+                          notValid: "{{alias}} geçerli bir takma ad değil."
+                      }
+                  },
+                  certificateType: {
+                      label: "Sertifika yapılandırma modu",
+                      requiredCertificate: "Güvenilir bir token sağlayıcı oluşturmak için bir sertifika gereklidir."
+                  },
+                  jwksUrl: {
+                      optionLabel: "JWKS uç noktası",
+                      placeholder: "JWKS uç noktası URL'sini girin",
+                      label: "JWKS uç noktası URL",
+                      hint: "Bu URL, imzalı yanıtları doğrulamak için anahtarları almak için kullanılacaktır.",
+                      validation: {
+                          notValid: "Lütfen geçerli bir URL girin"
+                      }
+                  },
+                  pem: {
+                      optionLabel: "PEM sertifikasını kullan",
+                      hint: "Bu sertifika, imzalı yanıtları doğrulamak için kullanılacaktır.",
+                      uploadCertificateButtonLabel: "Sertifika dosyası yükleyin",
+                      dropzoneText: "Bir sertifika dosyasını buraya sürükleyip bırakın.",
+                      pasteAreaPlaceholderText: "Güvenilir token sağlayıcı sertifikasını PEM formatında yapıştırın."
+                  }
+              }
+            },          
             expert: {
               wizardHelp: {
                 description: {
@@ -4412,7 +4533,20 @@ export const console: ConsoleNS = {
                 title: "Bu kuruluş için izin verilen maksimum alt kuruluş sayısına ulaştınız."
               },
               heading: "Alt kuruluşlar için maksimum sınıra ulaştınız"
-            }
+            },
+            subOrgLevelsLimitReachedError: {
+              emptyPlaceholder: {
+                  action: "Planları Görüntüle",
+                  subtitles: "Organizasyon yöneticisi ile iletişime geçebilir veya (eğer siz yöneticiyseniz) izin verilen limiti " +
+                      "artırmak için aboneliğinizi yükseltebilirsiniz.",
+                  title: "İzin verilen maksimum alt organizasyon seviyesine ulaştınız."
+              },
+              heading: "Organizasyon için izin verilen maksimum alt organizasyon seviyelerine ulaştınız."
+          },
+          duplicateOrgError: {
+              message: "Aynı isimde bir alt organizasyon zaten var.",
+              description: "Oluşturmaya çalıştığınız alt organizasyon zaten mevcut."
+          }
           }
         },
         footer: {
@@ -4556,33 +4690,65 @@ export const console: ConsoleNS = {
             },
             attributeSettings: {
               attributeListItem: {
-                validation: {
-                  empty: "Lütfen bir değer girin"
-                }
+                  validation: {
+                      empty: "Lütfen bir değer girin"
+                  }
               },
               attributeMapping: {
-                attributeColumnHeader: "Bağlanmak",
-                attributeMapColumnHeader: "Kimlik sağlayıcı özelliği",
-                attributeMapInputPlaceholderPrefix: "örneğin: için IdP'nin özelliği ",
-                componentHeading: "Özellikler Eşleme",
-                hint: "Kimlik Sağlayıcı tarafından desteklenen öznitelikleri ekleyin"
+                  attributeColumnHeader: "Nitelik",
+                  attributeMapColumnHeader: "Bağlantı niteliği",
+                  attributeMapInputPlaceholderPrefix: "örn: Bağlantının niteliği için ",
+                  componentHeading: "Nitelik Eşleme",
+                  hint: "Bağlantı tarafından desteklenen nitelikleri ekleyin",
+                  placeHolder: {
+                      title: "Eşlenmiş nitelik bulunamadı",
+                      subtitle: "Şu anda bu bağlantı için eklenmiş eşlenmiş nitelik yok.",
+                      action: "Nitelik Eşlemesi Ekle"
+                  },
+                  attributeMapTable: {
+                      mappedAttributeColumnHeader: "Eşlenmiş Nitelik",
+                      externalAttributeColumnHeader: "Harici IdP Niteliği"
+                  },
+                  heading: "Bağlantı Nitelik Eşlemeleri",
+                  subheading: "Harici bağlantıdan desteklenen nitelikleri ekleyin ve eşleyin.",
+                  search: {
+                      placeHolder: "Eşlenmiş nitelikleri ara"
+                  },
+                  attributeDropdown: {
+                      label: "Eşleşiyor",
+                      placeHolder: "Eşleme niteliği seçin",
+                      noResultsMessage: "Başka bir nitelik araması deneyin."
+                  },
+                  externalAttributeInput: {
+                      label: "Harici IdP Niteliği",
+                      placeHolder: "Harici IdP niteliği girin",
+                      existingErrorMessage: "Bu isimle eşlenmiş bir nitelik zaten var."
+                  },
+                  addAttributeButtonLabel: "Nitelik Eşlemesi Ekle",
+                  modal: {
+                      header: "Nitelik Eşlemeleri Ekle",
+                      placeholder: {
+                          title: "Hiçbir nitelik seçmediniz",
+                          subtitle: "Nitelikleri eşleyin ve başlamak için Nitelik Eşlemesi Ekle'ye tıklayın."
+                      }
+                  }
               },
               attributeProvisioning: {
-                attributeColumnHeader: {
-                  "0": "Bağlanmak",
-                  "1": "Kimlik sağlayıcı özelliği"
-                },
-                attributeMapColumnHeader: "Varsayılan değer",
-                attributeMapInputPlaceholderPrefix: "örneğin: için varsayılan bir değer ",
-                componentHeading: "Hazırlama Nitelikleri Seçimi",
-                hint: "Sağlama için gerekli öznitelikleri belirtin"
+                  attributeColumnHeader: {
+                      0: "Nitelik",
+                      1: "Bağlantı niteliği"
+                  },
+                  attributeMapColumnHeader: "Varsayılan değer",
+                  attributeMapInputPlaceholderPrefix: "örn: şunun için varsayılan değer ",
+                  componentHeading: "Sağlama Nitelikleri Seçimi",
+                  hint: "Sağlama için gerekli nitelikleri belirtin"
               },
               attributeSelection: {
-                searchAttributes: {
-                  placeHolder: "Arama özellikleri"
-                }
+                  searchAttributes: {
+                      placeHolder: "Nitelikleri ara"
+                  }
               }
-            },
+          },          
             authenticatorAccordion: {
               "default": {
                 "0": "Varsayılan",
@@ -10305,6 +10471,71 @@ export const console: ConsoleNS = {
           tokenReuseDisabled: "Belirteç Yeniden Kullanımı Devre Dışı Bırakıldı"
         }
       },
+      insights: {
+        pageTitle: "İçgörüler",
+        title: "İçgörüler",
+        description: "Kullanım istatistikleri ile kullanıcı davranışını daha iyi anlayın.",
+        durationMessage: "<1>{{ startTimestamp }}</1> ile <1>{{ endTimestamp }}</1> arasındaki sonuçları gösteriyor",
+        durationOption: "Son {{ duration }} gün",
+        lastFetchedMessage: {
+            label: "{{ time }} tarihinde son alındı",
+            tooltipText: "En son aktivite için içgörülerin grafiklerde yansıtılması birkaç dakika sürebilir"
+        },
+        advancedFilter: {
+            filterAttribute: "Filtre özniteliği",
+            filterCondition: "Filtre koşulu",
+            filterValue: "Filtre değeri"
+        },
+        commonFilters: {
+            userId: "Kullanıcı ID"
+        },
+        activityType: {
+            login: {
+                filters: {
+                    userStore: "Kullanıcı Deposu",
+                    serviceProvider: "Uygulama"
+                }
+            },
+            registration: {
+                filters: {
+                    onboardingMethod: {
+                        attributeName: "Kayıt Yöntemi",
+                        values: {
+                            adminInitiated: "Yönetici tarafından",
+                            userInvited: "E-posta davetiyesi",
+                            selfSignUp: "Kendiliğinden kayıt"
+                        }
+                    }
+                }
+            }
+        },
+        graphs: {
+            activeUsers: {
+                title: "Aktif Kullanıcılar",
+                titleHint: "Seçilen dönem içinde organizasyonunuza giriş yapan benzersiz kullanıcı sayısı"
+            },
+            successLogins: {
+                title: "Toplam Girişler",
+                titleHint: "Seçilen dönem içinde organizasyonunuza başarılı giriş sayısı"
+            },
+            failedLogins: {
+                title: "Başarısız Girişler"
+            },
+            signups: {
+                title: "Kullanıcı Kayıtları",
+                titleHint: "Seçilen dönem içinde gerçekleşen toplam kullanıcı (B2C) kayıtları"
+            }
+        },
+        notifications: {
+            fetchInsights: {
+                genericError: {
+                    description: "Seçilen süre için içgörüler alınırken bir hata oluştu.",
+                    message: "Bir şeyler yanlış gitti"
+                }
+            }
+        },
+        compareToLastPeriodMessage: "Önceki dönemle karşılaştır"
+      },    
       notifications: {
         endSession: {
           error: {

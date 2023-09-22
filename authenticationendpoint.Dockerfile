@@ -115,7 +115,7 @@ ENV WEB_APP_HOME=${TOMCAT_PATH}
 WORKDIR /app
 
 # Copy the Identity Apps repository to the container
-COPY . /app
+COPY ./identity-apps-core /app
 
 # Build the packages with Maven
 ENV MAVEN_OPTS="-Djdk.util.zip.disableZip64ExtraFieldValidation=true -Djdk.nio.zipfs.allowDotZipEntry=true"

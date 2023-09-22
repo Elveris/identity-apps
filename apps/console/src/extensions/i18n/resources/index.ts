@@ -16,5 +16,10 @@
  * under the License.
  */
 
+
 export * from "./en-US";
+export * from "./tr-TR";
+export * from "./de-DE";
 export * from "./fr-FR";
+export * from "./es-ES";
+
