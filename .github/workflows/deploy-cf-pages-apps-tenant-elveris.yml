@@ -73,18 +73,22 @@ jobs:
         id: install-dependencies
         run: pnpm install --no-frozen-lockfile
 
-      - name: 🏗️ Maven Build
-        id: build-with-maven
-        run: mvn clean install -U -Dlint.exec.skip=true -Dbootstrap.exec.skip=true
+      - name: 🧩 Install Dependencies
+        id: build
+        run: pnpm build
 
-      - name: 💾 Cache local Maven repository
-        id: cache-maven-m2
-        uses: actions/cache@v2
-        with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
+      # - name: 🏗️ Maven Build
+      #   id: build-with-maven
+      #   run: mvn clean install -U -Dlint.exec.skip=true -Dbootstrap.exec.skip=true
+
+      # - name: 💾 Cache local Maven repository
+      #   id: cache-maven-m2
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: ~/.m2/repository
+      #     key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-maven-
       
       - name: 🎈 Copy all apps
         id: copy-all-apps
