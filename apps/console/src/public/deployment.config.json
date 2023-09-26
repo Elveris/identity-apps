@@ -44,13 +44,13 @@
             "openid",
             "profile"
         ],
-        "serverOrigin": "https://localhost:9443",
+        "serverOrigin": "https://auth-sys.elveris.com",
         "responseMode": "query"
     },
     "i18nResourcePath": "",
     "loginCallbackPath": "",
     "logoutCallbackPath": "",
-    "serverOrigin": "https://localhost:9443",
+    "serverOrigin": "https://auth-sys.elveris.com",
     "routePaths": {
         "home": "/getting-started",
         "login": "",
@@ -94,7 +94,7 @@
         "applicationInsightsInstrumentationKey": "",
         "applicationInsightsEnabled": false,
         "defaultBrandedLoginScreenLogo": "",
-        "defaultBrandedLoginScreenCopyright": "${copyright} ${year} WSO2 LLC.",
+        "defaultBrandedLoginScreenCopyright": "${copyright} ${year} Elveriş",
         "deploymentRegion": "US",
         "asgardeoReservedAppRegex": "(^Asgardeo Try It$)|(WSO2_.+)",
         "collaboratorUsernameRegex": "^[\\u00C0-\\u00FFa-zA-Z0-9.+\\-_]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,10}$",
@@ -210,8 +210,8 @@
     "superTenantProxy": "",
     "ui": {
         "announcements": [],
-        "appCopyright": "${copyright} ${year} WSO2 LLC.",
-        "appTitle": "WSO2 Identity Server Console",
+        "appCopyright": "${copyright} ${year} Elveriş",
+        "appTitle": "Elveriş Kimlik Sunucusu Yönetim",
         "appName": "Console",
         "appLogoPath": "/assets/images/branding/logo.svg",
         "isGOTEnabledForSuperTenantOnly": true,
@@ -800,19 +800,19 @@
             }
         },
         "isFeatureGateEnabled": true,
-        "isCookieConsentBannerEnabled": false,
-        "isMarketingConsentBannerEnabled": false,
+        "isCookieConsentBannerEnabled": true,
+        "isMarketingConsentBannerEnabled": true,
         "isClientSecretHashEnabled": false,
         "isDefaultDialectEditingEnabled": false,
         "isDialectAddingEnabled": false,
         "isGroupAndRoleSeparationEnabled": true,
-        "isHeaderAvatarLabelAllowed": false,
+        "isHeaderAvatarLabelAllowed": true,
         "isRequestPathAuthenticationEnabled": false,
         "isLeftNavigationCategorized": true,
         "isSignatureValidationCertificateAliasEnabled": false,
         "listAllAttributeDialects": false,
         "privacyPolicyConfigs": {},
-        "productName": "WSO2 Identity Server",
+        "productName": "Elveriş Identity Server",
         "productVersionConfig": {
             "productVersion": ""
         },
@@ -822,7 +822,7 @@
             "My Account"
         ],
         "theme": {
-            "name": "wso2is"
+            "name": "default"
         }
     }
 }

@@ -26,7 +26,7 @@ import { MarketingConsentEndpointsInterface } from "../models";
  */
 export const getMarketingConsentEndpoints = (): MarketingConsentEndpointsInterface => {
     return {
-        addConsentEndpoint: Config.getDeploymentConfig().serverHost + "/api/asgardeo-marketing/v1/consent/me",
-        getConsentEndpoint: Config.getDeploymentConfig().serverHost + "/api/asgardeo-marketing/v1/consent/me"
+        addConsentEndpoint: Config.getDeploymentConfig().serverHost + "/api/v1/consent/me",
+        getConsentEndpoint: Config.getDeploymentConfig().serverHost + "/api/v1/consent/me"
     };
 };

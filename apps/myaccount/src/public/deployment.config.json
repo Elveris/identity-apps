@@ -1,13 +1,13 @@
 {
     "consoleApp": {
         "path": "/getting-started",
-        "origin": "https://localhost:9000"
+        "origin": "https://identity.elveris.com"
     },
     "appBaseName": "myaccount",
     "clientID": "MY_ACCOUNT",
     "loginCallbackPath": "",
     "logoutCallbackPath": "",
-    "serverOrigin": "https://localhost:9443",
+    "serverOrigin": "https://auth-sys.elveris.com",
     "routePaths": {
         "home": "/overview",
         "login": "",
@@ -26,7 +26,7 @@
         "clockTolerance": 300,
         "authorizeEndpointURL": "${serverOrigin}/${tenantPrefix}/${userTenantDomain}/oauth2/authorize",
         "oidcSessionIFrameEndpointURL": "${serverOrigin}/${tenantPrefix}/${userTenantDomain}/oidc/checksession",
-        "serverOrigin": "https://localhost:9443",
+        "serverOrigin": "https://auth-sys.elveris.com",
         "responseMode": "query"
     },
     "session": {
@@ -37,7 +37,7 @@
     },
     "ui": {
         "announcements": [],
-        "appCopyright": "${copyright} ${year} WSO2 LLC.",
+        "appCopyright": "${copyright} ${year} Elveriş",
         "appTitle": "IS Account",
         "appName": "Account",
         "appLogoPath": "/assets/images/branding/logo-dark.svg",
@@ -103,21 +103,21 @@
                 }
             }
         },
-        "isCookieConsentBannerEnabled": false,
-        "isHeaderAvatarLabelAllowed": false,
+        "isCookieConsentBannerEnabled": true,
+        "isHeaderAvatarLabelAllowed": true,
         "i18nConfigs": {
             "showLanguageSwitcher": true,
             "langAutoDetectEnabled": true
         },
         "privacyPolicyConfigs": {},
         "isProfileUsernameReadonly": true,
-        "productName": "Asgardeo",
+        "productName": "Elveriş Kimlik Sunucusu",
         "productVersionConfig": {
             "versionOverride": "",
             "productVersion": "PREVIEW"
         },
         "theme": {
-            "name": "wso2is"
+            "name": "default"
         }
     }
 }
