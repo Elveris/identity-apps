@@ -376,7 +376,7 @@ export const console: ConsoleNS = {
               list1: {
                 "0": "Kullanıcı adınız (işvereniniz tarafından oluşturulan kullanıcı adının sözleşme kapsamında olduğu durumlar hariç)",
                 "1": "Doğum tarihiniz/yaşınız",
-                "2": "Oturum açmak için kullanılan IP adresi",
+                            "2": "Oturum açmak için kullanılan IP adresi",
                 "3": "Giriş yapmak için bir cihaz (örn. telefon veya tablet) kullanıyorsanız cihaz kimliğiniz"
               },
               list2: {
@@ -5471,245 +5471,245 @@ export const console: ConsoleNS = {
             }
           }
         },
-        idvp: {
-          advancedSearch: {
-            form: {
-              inputs: {
-                filterValue: {
-                  placeholder: "Aranacak değeri girin"
-                }
-              }
-            },
-            placeholder: "Ada göre ara"
-          },
-          buttons: {
-            addIDVP: "Yeni Kimlik Doğrulama Sağlayıcısı"
-          },
-          placeholders: {
-            emptyIDVPList: {
-              subtitles: {
-                "0": "Şu anda kullanılabilir bir kimlik doğrulama sağlayıcısı yok.",
-                "1": "Takip ederek kolayca yeni bir kimlik doğrulama sağlayıcısı ekleyebilirsiniz.",
-                "2": "kimlik doğrulama sağlayıcısı oluşturma sihirbazındaki adımlar."
-              },
-              title: "Yeni bir Kimlik Doğrulama Sağlayıcısı ekleyin"
-            },
-            emptyIDVPTypeList: {
-              subtitles: {
-                "0": "Şu anda kimlik doğrulama sağlayıcı türü yok ",
-                "1": "yapılandırma için kullanılabilir."
-              },
-              title: "Kimlik doğrulama sağlayıcı türü bulunamadı"
-            }
-          },
-          confirmations: {
-            deleteIDVP: {
-              assertionHint: "Lütfen işleminizi onaylayın.",
-              content: "Bu kimlik doğrulama sağlayıcısını silerseniz kurtaramazsınız. ",
-              header: "Emin misin?",
-              message: "Bu işlem geri alınamaz ve kimlik doğrulama sağlayıcısını kalıcı olarak siler."
-            }
-          },
-          notifications: {
-            getIDVPList: {
-              error: {
-                description: "{{ description }}",
-                message: "Alma Hatası"
-              },
-              genericError: {
-                description: "Kimlik doğrulama sağlayıcıları alınırken bir hata oluştu.",
-                message: "Alma Hatası"
-              }
-            },
-            deleteIDVP: {
-              error: {
-                description: "{{ description }}",
-                message: "Hatayı Sil"
-              },
-              genericError: {
-                description: "Kimlik doğrulama sağlayıcısı silinirken bir hata oluştu.",
-                message: "Hatayı Sil"
-              },
-              success: {
-                description: "Kimlik doğrulama sağlayıcısı başarıyla silindi.",
-                message: "Silme Başarılı"
-              }
-            },
-            updateIDVP: {
-              error: {
-                description: "{{ description }}",
-                message: "Güncelleme hatası"
-              },
-              genericError: {
-                description: "Kimlik doğrulama sağlayıcısı güncellenirken bir hata oluştu.",
-                message: "Güncelleme Hatası"
-              },
-              success: {
-                description: "Kimlik doğrulama sağlayıcısı başarıyla güncellendi.",
-                message: "Güncelleme başarılı"
-              }
-            },
-            addIDVP: {
-              error: {
-                description: "{{ description }}",
-                message: "Hata oluştur"
-              },
-              genericError: {
-                description: "Kimlik doğrulama sağlayıcısı oluşturulurken bir hata oluştu.",
-                message: "Hata oluştur"
-              },
-              success: {
-                description: "Kimlik doğrulama sağlayıcısı başarıyla oluşturuldu.",
-                message: "Başarılı oluştur"
-              }
-            },
-            submitAttributeSettings: {
-              error: {
-                description: "Tüm zorunlu özellikleri yapılandırmanız gerekir.",
-                message: "Güncelleme gerçekleştirilemiyor"
-              }
-            },
-            getAllLocalClaims: {
-              error: {
-                description: "{{ description }}",
-                message: "Alma Hatası"
-              },
-              genericError: {
-                description: "Nitelikler alınırken bir hata oluştu.",
-                message: "Alma Hatası"
-              }
-            },
-            getIDVP: {
-              error: {
-                description: "{{ description }}",
-                message: "Alma Hatası"
-              },
-              genericError: {
-                description: "Kimlik doğrulama sağlayıcı ayrıntıları alınırken bir hata oluştu.",
-                message: "Alma Hatası"
-              }
-            },
-            getUIMetadata: {
-              error: {
-                description: "{{ description }}",
-                message: "Alma Hatası"
-              },
-              genericError: {
-                description: "Kimlik doğrulama sağlayıcısı için meta veriler alınırken bir hata oluştu.",
-                message: "Alma Hatası"
-              }
-            },
-            getIDVPTemplateTypes: {
-              error: {
-                description: "{{ description }}",
-                message: "Alma Hatası"
-              },
-              genericError: {
-                description: "Kimlik doğrulama sağlayıcı şablon türleri alınırken bir hata oluştu.",
-                message: "Alma Hatası"
-              }
-            },
-            getIDVPTemplateType: {
-              error: {
-                description: "{{ description }}",
-                message: "Alma Hatası"
-              },
-              genericError: {
-                description: "Kimlik doğrulama sağlayıcı şablon türü alınırken bir hata oluştu.",
-                message: "Alma Hatası"
-              }
-            },
-            getIDVPTemplate: {
-              error: {
-                description: "{{ description }}",
-                message: "Alma Hatası"
-              },
-              genericError: {
-                description: "Kimlik doğrulama sağlayıcı şablonu alınırken bir hata oluştu.",
-                message: "Alma Hatası"
-              }
-            }
-          },
-          forms: {
-            generalDetails: {
-              description: {
-                hint: "Kimlik doğrulama sağlayıcısı için bir metin açıklaması.",
-                label: "Tanım",
-                placeholder: "Kimlik doğrulama sağlayıcısı için bir açıklama girin."
-              },
-              name: {
-                hint: "Bu kimlik doğrulama sağlayıcısı için benzersiz bir ad girin.",
-                label: "İsim",
-                placeholder: "Kimlik doğrulama sağlayıcısı için bir ad girin.",
-                validations: {
-                  duplicate: "Bu ada sahip bir kimlik doğrulama sağlayıcısı zaten var",
-                  empty: "Kimlik Doğrulama Sağlayıcı adı gerekli",
-                  maxLengthReached: "Kimlik doğrulama sağlayıcı adı şu değeri aşamaz: {{ maxLength }} karakterler.",
-                  required: "Kimlik Doğrulama Sağlayıcı adı gerekli",
-                  invalid: "Lütfen geçerli bir isim girin"
-                }
-              }
-            },
-            attributeSettings: {
-              attributeMapping: {
-                heading: "Kimlik Doğrulama Sağlayıcı Öznitelik Eşlemeleri",
-                hint: "Harici Kimlik Doğrulama Sağlayıcısından desteklenen öznitelikleri ekleyin ve eşleyin.",
-                addButton: "Nitelik Eşleme Ekle",
-                emptyPlaceholderEdit: {
-                  subtitle: "Bu Kimlik Doğrulama Sağlayıcısı için eşlenmiş öznitelik yok.",
-                  title: "Eşlenen özellik yok"
-                },
-                emptyPlaceholderCreate: {
-                  subtitle: "Nitelikleri eşleyin ve tıklayın <1>Nitelik Eşleme Ekle</1> başlamak.",
-                  title: "Herhangi bir özelliği eşlemediniz"
-                }
-              },
-              attributeMappingListItem: {
-                validation: {
-                  duplicate: "Bu adla eşlenen bir özellik zaten var.",
-                  required: "Bu alan boş olamaz",
-                  invalid: "Lütfen geçerli bir giriş girin"
-                },
-                placeholders: {
-                  mappedValue: "Harici IDVP özelliğini girin",
-                  localClaim: "Eşleme özelliğini seçin"
-                },
-                labels: {
-                  mappedValue: "Harici IDVP Özniteliği",
-                  localClaim: "Haritalar"
-                }
-              },
-              attributeSelectionModal: {
-                header: "Öznitelik Eşlemeleri Ekle"
-              },
-            },
-            dynamicUI: {
-                validations: {
-                    required: "Bu alan boş olamaz",
-                    regex: "Lütfen geçerli bir giriş girin",
-                    range: "Rakam {{ min }} - {{ max }} arasında olmalıdır."
-                }
-            }
-          },
-          dangerZoneGroup: {
-            deleteIDVP: {
-              actionTitle: "Silmek",
-              header: "Kimlik doğrulama sağlayıcısını sil",
-              subheader: "Bu geri alınamaz bir eylemdir, dikkatli ilerleyin."
-            },
-            disableIDVP: {
-              actionTitle: "{{ state }} Kimlik Doğrulama Sağlayıcısı",
-              header: "{{ state }} kimlik doğrulama sağlayıcısı",
-              subheader: "Bir kimlik doğrulama sağlayıcısını devre dışı bıraktığınızda, yeniden etkinleştirilene kadar artık kullanılamaz.",
-              subheader2: "Uygulamalarınızla kullanmak için kimlik doğrulama sağlayıcısını etkinleştirin."
-            },
-            header: "Tehlikeli bölge"
-          },
-          list: {
-            actions: "Hareketler",
-            name: "İsim"
-          }
-        },
+        // idvp: {
+        //   advancedSearch: {
+        //     form: {
+        //       inputs: {
+        //         filterValue: {
+        //           placeholder: "Aranacak değeri girin"
+        //         }
+        //       }
+        //     },
+        //     placeholder: "Ada göre ara"
+        //   },
+        //   buttons: {
+        //     addIDVP: "Yeni Kimlik Doğrulama Sağlayıcısı"
+        //   },
+        //   placeholders: {
+        //     emptyIDVPList: {
+        //       subtitles: {
+        //         "0": "Şu anda kullanılabilir bir kimlik doğrulama sağlayıcısı yok.",
+        //         "1": "Takip ederek kolayca yeni bir kimlik doğrulama sağlayıcısı ekleyebilirsiniz.",
+        //         "2": "kimlik doğrulama sağlayıcısı oluşturma sihirbazındaki adımlar."
+        //       },
+        //       title: "Yeni bir Kimlik Doğrulama Sağlayıcısı ekleyin"
+        //     },
+        //     emptyIDVPTypeList: {
+        //       subtitles: {
+        //         "0": "Şu anda kimlik doğrulama sağlayıcı türü yok ",
+        //         "1": "yapılandırma için kullanılabilir."
+        //       },
+        //       title: "Kimlik doğrulama sağlayıcı türü bulunamadı"
+        //     }
+        //   },
+        //   confirmations: {
+        //     deleteIDVP: {
+        //       assertionHint: "Lütfen işleminizi onaylayın.",
+        //       content: "Bu kimlik doğrulama sağlayıcısını silerseniz kurtaramazsınız. ",
+        //       header: "Emin misin?",
+        //       message: "Bu işlem geri alınamaz ve kimlik doğrulama sağlayıcısını kalıcı olarak siler."
+        //     }
+        //   },
+        //   notifications: {
+        //     getIDVPList: {
+        //       error: {
+        //         description: "{{ description }}",
+        //         message: "Alma Hatası"
+        //       },
+        //       genericError: {
+        //         description: "Kimlik doğrulama sağlayıcıları alınırken bir hata oluştu.",
+        //         message: "Alma Hatası"
+        //       }
+        //     },
+        //     deleteIDVP: {
+        //       error: {
+        //         description: "{{ description }}",
+        //         message: "Hatayı Sil"
+        //       },
+        //       genericError: {
+        //         description: "Kimlik doğrulama sağlayıcısı silinirken bir hata oluştu.",
+        //         message: "Hatayı Sil"
+        //       },
+        //       success: {
+        //         description: "Kimlik doğrulama sağlayıcısı başarıyla silindi.",
+        //         message: "Silme Başarılı"
+        //       }
+        //     },
+        //     updateIDVP: {
+        //       error: {
+        //         description: "{{ description }}",
+        //         message: "Güncelleme hatası"
+        //       },
+        //       genericError: {
+        //         description: "Kimlik doğrulama sağlayıcısı güncellenirken bir hata oluştu.",
+        //         message: "Güncelleme Hatası"
+        //       },
+        //       success: {
+        //         description: "Kimlik doğrulama sağlayıcısı başarıyla güncellendi.",
+        //         message: "Güncelleme başarılı"
+        //       }
+        //     },
+        //     addIDVP: {
+        //       error: {
+        //         description: "{{ description }}",
+        //         message: "Hata oluştur"
+        //       },
+        //       genericError: {
+        //         description: "Kimlik doğrulama sağlayıcısı oluşturulurken bir hata oluştu.",
+        //         message: "Hata oluştur"
+        //       },
+        //       success: {
+        //         description: "Kimlik doğrulama sağlayıcısı başarıyla oluşturuldu.",
+        //         message: "Başarılı oluştur"
+        //       }
+        //     },
+        //     submitAttributeSettings: {
+        //       error: {
+        //         description: "Tüm zorunlu özellikleri yapılandırmanız gerekir.",
+        //         message: "Güncelleme gerçekleştirilemiyor"
+        //       }
+        //     },
+        //     getAllLocalClaims: {
+        //       error: {
+        //         description: "{{ description }}",
+        //         message: "Alma Hatası"
+        //       },
+        //       genericError: {
+        //         description: "Nitelikler alınırken bir hata oluştu.",
+        //         message: "Alma Hatası"
+        //       }
+        //     },
+        //     getIDVP: {
+        //       error: {
+        //         description: "{{ description }}",
+        //         message: "Alma Hatası"
+        //       },
+        //       genericError: {
+        //         description: "Kimlik doğrulama sağlayıcı ayrıntıları alınırken bir hata oluştu.",
+        //         message: "Alma Hatası"
+        //       }
+        //     },
+        //     getUIMetadata: {
+        //       error: {
+        //         description: "{{ description }}",
+        //         message: "Alma Hatası"
+        //       },
+        //       genericError: {
+        //         description: "Kimlik doğrulama sağlayıcısı için meta veriler alınırken bir hata oluştu.",
+        //         message: "Alma Hatası"
+        //       }
+        //     },
+        //     getIDVPTemplateTypes: {
+        //       error: {
+        //         description: "{{ description }}",
+        //         message: "Alma Hatası"
+        //       },
+        //       genericError: {
+        //         description: "Kimlik doğrulama sağlayıcı şablon türleri alınırken bir hata oluştu.",
+        //         message: "Alma Hatası"
+        //       }
+        //     },
+        //     getIDVPTemplateType: {
+        //       error: {
+        //         description: "{{ description }}",
+        //         message: "Alma Hatası"
+        //       },
+        //       genericError: {
+        //         description: "Kimlik doğrulama sağlayıcı şablon türü alınırken bir hata oluştu.",
+        //         message: "Alma Hatası"
+        //       }
+        //     },
+        //     getIDVPTemplate: {
+        //       error: {
+        //         description: "{{ description }}",
+        //         message: "Alma Hatası"
+        //       },
+        //       genericError: {
+        //         description: "Kimlik doğrulama sağlayıcı şablonu alınırken bir hata oluştu.",
+        //         message: "Alma Hatası"
+        //       }
+        //     }
+        //   },
+        //   forms: {
+        //     generalDetails: {
+        //       description: {
+        //         hint: "Kimlik doğrulama sağlayıcısı için bir metin açıklaması.",
+        //         label: "Tanım",
+        //         placeholder: "Kimlik doğrulama sağlayıcısı için bir açıklama girin."
+        //       },
+        //       name: {
+        //         hint: "Bu kimlik doğrulama sağlayıcısı için benzersiz bir ad girin.",
+        //         label: "İsim",
+        //         placeholder: "Kimlik doğrulama sağlayıcısı için bir ad girin.",
+        //         validations: {
+        //           duplicate: "Bu ada sahip bir kimlik doğrulama sağlayıcısı zaten var",
+        //           empty: "Kimlik Doğrulama Sağlayıcı adı gerekli",
+        //           maxLengthReached: "Kimlik doğrulama sağlayıcı adı şu değeri aşamaz: {{ maxLength }} karakterler.",
+        //           required: "Kimlik Doğrulama Sağlayıcı adı gerekli",
+        //           invalid: "Lütfen geçerli bir isim girin"
+        //         }
+        //       }
+        //     },
+        //     attributeSettings: {
+        //       attributeMapping: {
+        //         heading: "Kimlik Doğrulama Sağlayıcı Öznitelik Eşlemeleri",
+        //         hint: "Harici Kimlik Doğrulama Sağlayıcısından desteklenen öznitelikleri ekleyin ve eşleyin.",
+        //         addButton: "Nitelik Eşleme Ekle",
+        //         emptyPlaceholderEdit: {
+        //           subtitle: "Bu Kimlik Doğrulama Sağlayıcısı için eşlenmiş öznitelik yok.",
+        //           title: "Eşlenen özellik yok"
+        //         },
+        //         emptyPlaceholderCreate: {
+        //           subtitle: "Nitelikleri eşleyin ve tıklayın <1>Nitelik Eşleme Ekle</1> başlamak.",
+        //           title: "Herhangi bir özelliği eşlemediniz"
+        //         }
+        //       },
+        //       attributeMappingListItem: {
+        //         validation: {
+        //           duplicate: "Bu adla eşlenen bir özellik zaten var.",
+        //           required: "Bu alan boş olamaz",
+        //           invalid: "Lütfen geçerli bir giriş girin"
+        //         },
+        //         placeholders: {
+        //           mappedValue: "Harici IDVP özelliğini girin",
+        //           localClaim: "Eşleme özelliğini seçin"
+        //         },
+        //         labels: {
+        //           mappedValue: "Harici IDVP Özniteliği",
+        //           localClaim: "Haritalar"
+        //         }
+        //       },
+        //       attributeSelectionModal: {
+        //         header: "Öznitelik Eşlemeleri Ekle"
+        //       },
+        //     },
+        //     dynamicUI: {
+        //         validations: {
+        //             required: "Bu alan boş olamaz",
+        //             regex: "Lütfen geçerli bir giriş girin",
+        //             range: "Rakam {{ min }} - {{ max }} arasında olmalıdır."
+        //         }
+        //     }
+        //   },
+        //   dangerZoneGroup: {
+        //     deleteIDVP: {
+        //       actionTitle: "Silmek",
+        //       header: "Kimlik doğrulama sağlayıcısını sil",
+        //       subheader: "Bu geri alınamaz bir eylemdir, dikkatli ilerleyin."
+        //     },
+        //     disableIDVP: {
+        //       actionTitle: "{{ state }} Kimlik Doğrulama Sağlayıcısı",
+        //       header: "{{ state }} kimlik doğrulama sağlayıcısı",
+        //       subheader: "Bir kimlik doğrulama sağlayıcısını devre dışı bıraktığınızda, yeniden etkinleştirilene kadar artık kullanılamaz.",
+        //       subheader2: "Uygulamalarınızla kullanmak için kimlik doğrulama sağlayıcısını etkinleştirin."
+        //     },
+        //     header: "Tehlikeli bölge"
+        //   },
+        //   list: {
+        //     actions: "Hareketler",
+        //     name: "İsim"
+        //   }
+        // },
         overview: {
           banner: {
             heading: "Geliştiriciler için Elveriş Kimlik Sunucusu",
@@ -5914,7 +5914,7 @@ export const console: ConsoleNS = {
             general: "Genel",
             gettingStarted: "Başlarken",
             identityProviders: "Kimlik Sağlayıcılar",
-            identityVerificationProviders: "Kimlik Doğrulama Sağlayıcıları"
+            // identityVerificationProviders: "Kimlik Doğrulama Sağlayıcıları"
           },
           customize: "Özelleştirmek",
           identityProviderEdit: "Kimlik Sağlayıcıları Düzenle",
@@ -6023,18 +6023,18 @@ export const console: ConsoleNS = {
           },
           title: "Kimlik Sağlayıcı Seçin"
         },
-        idvp: {
-          subTitle: "Kimlik Doğrulama Sağlayıcılarını yöneterek kullanıcıların kimliklerini onlar aracılığıyla doğrulamasına izin verin.",
-          title: "Kimlik Doğrulama Sağlayıcıları"
-        },
-        idvpTemplate: {
-          backButton: "Kimlik Doğrulama Sağlayıcılarına geri dönün",
-          subTitle: "Aşağıdaki kimlik doğrulama sağlayıcılarından birini seçin.",
-          title: "Kimlik Doğrulama Sağlayıcısını Seçin",
-          search: {
-            placeholder: "Ada göre ara"
-          }
-        },
+        // idvp: {
+        //   subTitle: "Kimlik Doğrulama Sağlayıcılarını yöneterek kullanıcıların kimliklerini onlar aracılığıyla doğrulamasına izin verin.",
+        //   title: "Kimlik Doğrulama Sağlayıcıları"
+        // },
+        // idvpTemplate: {
+        //   backButton: "Kimlik Doğrulama Sağlayıcılarına geri dönün",
+        //   subTitle: "Aşağıdaki kimlik doğrulama sağlayıcılarından birini seçin.",
+        //   title: "Kimlik Doğrulama Sağlayıcısını Seçin",
+        //   search: {
+        //     placeholder: "Ada göre ara"
+        //   }
+        // },
         overview: {
           subTitle: "Uygulamaları, kimlik sağlayıcıları, kullanıcıları ve rolleri, öznitelik lehçelerini vb. yapılandırın ve yönetin.",
           title: "Hoş geldin, {{firstName}}"
@@ -9978,20 +9978,20 @@ export const console: ConsoleNS = {
                 message: "Kullanıcı başarıyla eklendi"
               }
             },
-            addUserPendingApproval: {
-                error: {
-                    description: "{{description}}",
-                    message: "Yeni kullanıcı eklenirken hata oluştu"
-                },
-                genericError: {
-                    description: "Couldn't add the new user",
-                    message: "Bir şeyler yanlış gitti"
-                },
-                success: {
-                    description: "Yeni kullanıcı kabul edildi. Onaylama bekleniyor.",
-                    message: "Kullanıcı kabul edildi."
-                }
-            },
+            // addUserPendingApproval: {
+            //     error: {
+            //         description: "{{description}}",
+            //         message: "Yeni kullanıcı eklenirken hata oluştu"
+            //     },
+            //     genericError: {
+            //         description: "Couldn't add the new user",
+            //         message: "Bir şeyler yanlış gitti"
+            //     },
+            //     success: {
+            //         description: "Yeni kullanıcı kabul edildi. Onaylama bekleniyor.",
+            //         message: "Kullanıcı kabul edildi."
+            //     }
+            // },
             deleteUser: {
               error: {
                 description: "{{description}}",
