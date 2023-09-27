@@ -16,7 +16,7 @@
     "extensions": {
         "applicationInsightsCookieDomain": "",
         "applicationInsightsCookiePostfix": "",
-        "applicationInsightsEnabled": "false",
+        "applicationInsightsEnabled": "true",
         "applicationInsightsInstrumentationKey": "",
         "applicationInsightsProxyEndpoint": ""
     },
@@ -40,7 +40,7 @@
         "appCopyright": "${copyright} ${year} Elveriş",
         "appTitle": "IS Account",
         "appName": "Account",
-        "appLogoPath": "/assets/images/branding/logo-dark.svg",
+        "appLogoPath": "/assets/images/branding/logo.svg",
         "enableMFAUserWise": true,
         "disableMFAForFederatedUsers": true,
         "forceBackupCode": true,
@@ -81,8 +81,7 @@
             },
             "personalInfo": {
                 "disabledFeatures": [
-                    "profileInfo.mobileVerification",
-                    "profileInfo.linkedAccounts"
+        
                 ],
                 "enabled": true,
                 "scopes": {
@@ -93,7 +92,7 @@
                 }
             },
             "security": {
-                "disabledFeatures": ["security.mfa.sms", "security.loginVerifyData.typingDNA"],
+                "disabledFeatures": ["security.loginVerifyData.typingDNA"],
                 "enabled": true,
                 "scopes": {
                     "create": [],

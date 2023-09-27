@@ -6,7 +6,7 @@
       Product Branding
 ------------------------------*/
 
-@productLogoHeight: 20px;
+@productLogoHeight: 80px;
 @productTitleFontWeight: 600;
 @productTitleFontSize: 1.3rem;
 @productTitleAppNameMargin: 0 0 0 5px;
