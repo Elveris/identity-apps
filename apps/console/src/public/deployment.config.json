@@ -62,10 +62,10 @@
             "apiResources": {
                 "scopes": "{update=[internal_application_mgt_update], create=[internal_application_mgt_create], read=[internal_application_mgt_view], delete=[internal_application_mgt_update]}",
                 "disabled_features": [],
-                "enabled": "false"
+                "enabled": "true"
             },
             "applicationRoles": {
-                "enabled": "false",
+                "enabled": "true",
                 "scopes": "{update=[], read=[], create=[], delete=[]}",
                 "disabled_features": []
             },
@@ -92,8 +92,8 @@
         },
         "applicationInsightsProxyEndpoint": "",
         "applicationInsightsInstrumentationKey": "",
-        "applicationInsightsEnabled": false,
-        "defaultBrandedLoginScreenLogo": "",
+        "applicationInsightsEnabled": true,
+        "defaultBrandedLoginScreenLogo": "/assets/images/branding/logo.svg",
         "defaultBrandedLoginScreenCopyright": "${copyright} ${year} Elveriş",
         "deploymentRegion": "US",
         "asgardeoReservedAppRegex": "(^Asgardeo Try It$)|(WSO2_.+)",
@@ -101,7 +101,7 @@
         "asgardeoTryItURL": "",
         "applicationInsightsCookiePostfix": "",
         "upgradeButtonUrl": "",
-        "defaultBrandedLoginScreenLogoWhite": "",
+        "defaultBrandedLoginScreenLogoWhite": "/assets/images/branding/logo.svg",
         "applicationInsightsCookieDomain": "",
         "upgradeButtonEnabled": false,
         "regionQualifiedConsoleUrl": "",
@@ -229,7 +229,7 @@
             },
             "apiResources": {
                 "disabledFeatures": [],
-                "enabled": false,
+                "enabled": true,
                 "scopes": {
                     "update": [
                         "internal_application_mgt_update"
@@ -247,7 +247,7 @@
             },
             "applicationRoles": {
                 "disabledFeatures": [],
-                "enabled": false,
+                "enabled": true,
                 "scopes": {
                     "update": [],
                     "read": [],
@@ -257,7 +257,7 @@
             },
             "myAccount": {
                 "disabledFeatures": [],
-                "enabled": false,
+                "enabled": true,
                 "scopes": {
                     "update": [],
                     "read": [],
@@ -359,7 +359,7 @@
             },
             "approvals": {
                 "disabledFeatures": [],
-                "enabled": false,
+                "enabled": true,
                 "scopes": {
                     "update": [
                         "internal_humantask_view"
@@ -561,7 +561,7 @@
                 }
             },
             "secretsManagement": {
-                "enabled": false,
+                "enabled": true,
                 "scopes": {
                     "create": [
                         "internal_secret_mgt_add"
@@ -670,7 +670,7 @@
             },
             "remoteFetchConfig": {
                 "disabledFeatures": [],
-                "enabled": false,
+                "enabled": true,
                 "scopes": {
                     "read": [
                         "internal_identity_mgt_view",
@@ -785,8 +785,8 @@
             "DEFAULT"
         ],
         "i18nConfigs": {
-            "showLanguageSwitcher": false,
-            "langAutoDetectEnabled": false
+            "showLanguageSwitcher": true,
+            "langAutoDetectEnabled": true
         },
         "identityProviderTemplates": {
             "hypr": {
