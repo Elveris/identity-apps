@@ -92,7 +92,7 @@ RUN apt-get install -y maven
 RUN apt-get install -y openjdk-17-jdk
 
 # Install pnpm
-RUN npm install -g pnpm@7.x.x
+RUN npm install -g pnpm@8.x.x
 
 # Set environment variables
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
@@ -107,8 +107,10 @@ COPY . /app
 
 # Build the packages with Maven
 ENV MAVEN_OPTS="-Djdk.util.zip.disableZip64ExtraFieldValidation=true -Djdk.nio.zipfs.allowDotZipEntry=true"
+RUN pnpm install
+RUN pnpm build
+WORKDIR /app/identity-apps-core/
 RUN mvn clean install
-
 # Use the official Tomcat runtime as a base image
 FROM tomcat:9.0-jdk17-openjdk
 
@@ -121,7 +123,7 @@ RUN groupadd -r ${RUN_GROUP} && useradd -g ${RUN_GROUP} -d ${CATALINA_HOME} -s /
 # Copy the built war file into the webapps directory of Tomcat
 RUN mkdir -p $CATALINA_HOME/accountrecoveryendpoint
 WORKDIR /usr/local/tomcat/webapps/accountrecoveryendpoint
-COPY --from=build-stage /app/java/apps/recovery-portal/target/accountrecoveryendpoint.war .
+COPY --from=build-stage /app/identity-apps-core/apps/recovery-portal/target/accountrecoveryendpoint.war .
 RUN jar -xvf accountrecoveryendpoint.war
 RUN rm -rf accountrecoveryendpoint.war
 COPY --from=is-stage  /home/wso2carbon/webapp-lib/* WEB-INF/lib

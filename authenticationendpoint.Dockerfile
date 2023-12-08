@@ -104,7 +104,7 @@ RUN apt-get install -y maven
 RUN apt-get install -y openjdk-17-jdk
 
 # Install pnpm
-RUN npm install -g pnpm@7.x.x
+RUN npm install -g pnpm@8.x.x
 
 # Set environment variables
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
@@ -115,12 +115,15 @@ ENV WEB_APP_HOME=${TOMCAT_PATH}
 WORKDIR /app
 
 # Copy the Identity Apps repository to the container
-COPY ./identity-apps-core /app
+COPY ./ /app
 
 # Build the packages with Maven
 ENV MAVEN_OPTS="-Djdk.util.zip.disableZip64ExtraFieldValidation=true -Djdk.nio.zipfs.allowDotZipEntry=true"
-RUN mvn clean install
 
+RUN pnpm install
+RUN pnpm build
+WORKDIR /app/identity-apps-core/
+RUN mvn clean install
 # Use the official Tomcat runtime as a base image
 FROM tomcat:9.0-jdk17-openjdk
 
@@ -133,7 +136,7 @@ RUN groupadd -r ${RUN_GROUP} && useradd -g ${RUN_GROUP} -d ${CATALINA_HOME} -s /
 # Copy the built war file into the webapps directory of Tomcat
 RUN mkdir -p $CATALINA_HOME/authenticationendpoint
 WORKDIR /usr/local/tomcat/webapps/authenticationendpoint
-COPY --from=build-stage /app/java/apps/authentication-portal/target/authenticationendpoint.war .
+COPY --from=build-stage /app/identity-apps-core/apps/authentication-portal/target/authenticationendpoint.war .
 RUN jar -xvf authenticationendpoint.war
 RUN rm -rf authenticationendpoint.war
 COPY --from=is-stage  /home/wso2carbon/webapp-lib/* WEB-INF/lib
